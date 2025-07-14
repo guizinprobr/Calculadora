@@ -1,0 +1,62 @@
+//calcucladora
+#include<stdio.h>
+#include<math.h>
+int op,n1,n2, resposta;
+int main(){
+	
+	do{
+		
+		
+	printf("===============================\n");
+	printf("Calculadora Simples\n");
+	printf("===============================\n");
+	printf("Selecione uma opcao apenas numeros: \n");
+	printf("[1] Soma\n[2] Subtracao\n[3] Multiplicacao\n[4] Divisao\n[5] Sair\n");
+	scanf("%i",&op);
+	
+	switch(op){
+		case 1: printf("Digite o primeiro numero: ");
+				scanf("%i", &n1);
+				printf("Digite o segundo numero: ");
+				scanf("%i", &n2);
+				printf("%i",n1+n2);
+				printf("\n");
+				system("pause");
+				
+				break;
+		case 2: printf("Digite o primeiro numero:  ");
+				scanf("%i", &n1);
+				printf("Digite o segundo numero: ");
+				scanf("%i", &n2);
+				printf("%i\n",n1-n2);
+				break;
+		case 3: printf("Digite o primeiro numero:  ");
+				scanf("%i", &n1);
+				printf("Digite o segundo numero: ");
+				scanf("%i", &n2);
+				printf("%i\n",n1*n2);
+				break;
+		case 4: printf("Digite o primeiro numero:  ");
+				scanf("%i", &n1);
+				printf("Digite o segundo numero: ");
+				scanf("%i", &n2);
+				printf("%i\n",n1/n2);
+				break;
+		case 5: break;
+		default: printf("Escolha uma opcao valida\n ");
+				break;
+	
+	}
+		
+		printf("\nDeseja realizar outra operacao? s(qualquer num)/n(1) ");
+		scanf("%i",&resposta);
+		if(resposta==1){
+			system("cls");
+			printf("Obrigado por usar a calculadora\n");
+			system("pause");
+			break;
+		}
+		system("cls");	
+			
+	}while(op!=5);
+	}
