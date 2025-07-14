@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-    int op, n1, n2;
+    int op;
+	float n1, n2;
     char resposta;
 
     do {
@@ -17,37 +18,37 @@ int main() {
         switch(op) {
             case 1:
                 printf("Digite o primeiro numero: ");
-                scanf("%d", &n1);
+                scanf("%f", &n1);
                 printf("Digite o segundo numero: ");
-                scanf("%d", &n2);
-                printf("Resultado: %d + %d = %d\n", n1, n2, n1 + n2);
+                scanf("%f", &n2);
+                printf("Resultado: %f + %f = %f\n", n1, n2, n1 + n2);
                 break;
 
             case 2:
                 printf("Digite o primeiro numero: ");
-                scanf("%d", &n1);
+                scanf("%f", &n1);
                 printf("Digite o segundo numero: ");
-                scanf("%d", &n2);
-                printf("Resultado: %d - %d = %d\n", n1, n2, n1 - n2);
+                scanf("%f", &n2);
+                printf("Resultado: %f - %f = %f\n", n1, n2, n1 - n2);
                 break;
 
             case 3:
                 printf("Digite o primeiro numero: ");
-                scanf("%d", &n1);
+                scanf("%f", &n1);
                 printf("Digite o segundo numero: ");
-                scanf("%d", &n2);
-                printf("Resultado: %d * %d = %d\n", n1, n2, n1 * n2);
+                scanf("%f", &n2);
+                printf("Resultado: %f * %f = %f\n", n1, n2, n1 * n2);
                 break;
 
             case 4:
                 printf("Digite o primeiro numero: ");
-                scanf("%d", &n1);
+                scanf("%f", &n1);
                 printf("Digite o segundo numero: ");
-                scanf("%d", &n2);
+                scanf("%f", &n2);
                 if (n2 == 0) {
                     printf("Erro: divisão por zero não permitida.\n");
                 } else {
-                    printf("Resultado: %d / %d = %d\n", n1, n2, n1 / n2);
+                    printf("Resultado: %f / %f = %f\n", n1, n2, n1 / n2);
                 }
                 break;
 
