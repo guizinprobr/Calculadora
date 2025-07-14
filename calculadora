@@ -13,8 +13,9 @@ int main() {
         printf("===============================\n");
         printf("Selecione uma opcao apenas numeros:\n");
         printf("[1] Soma\n[2] Subtracao\n[3] Multiplicacao\n[4] Divisao\n[5] Sair\n");
+        fflush(stdin);
         scanf("%d", &op);
-
+		if()
         switch(op) {
             case 1:
                 printf("Digite o primeiro numero: ");
