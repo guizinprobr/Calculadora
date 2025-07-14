@@ -29,7 +29,7 @@ int main(){
 				scanf("%i", &n1);
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i - %i = %i\n",n2,n1,n2-n1);
+				printf("%i - %i = %i\n",n1,n2,n1-n2);
 				break;
 		case 3: printf("Digite o primeiro numero:  ");
 				scanf("%i", &n1);
@@ -39,10 +39,10 @@ int main(){
 				break;
 		case 4: printf("Digite o primeiro numero:  ");
 				scanf("%i", &n1);
-				if(n1==0) printf("Erro: Divisao por zero nao eh permitida "); break;
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i / %i = %i\n",n2,n1,n2/n1);
+				if(n2==0) printf("Erro: Divisao por zero nao eh permitida "); break;
+				printf("%i / %i = %i\n",n1,n2,n1/n2);
 				break;
 		case 5: break;
 		default: printf("Escolha uma opcao valida\n ");
@@ -50,6 +50,10 @@ int main(){
 				break;
 	
 	}
+		
+		if(op!=5){
+		
+		do{
 		
 		printf("\nDeseja realizar outra operacao? s/n ");
 		scanf("%s",&resposta);
@@ -59,7 +63,15 @@ int main(){
 			system("pause");
 			break;
 		}
+		if(resposta!='n' && resposta!='s')
+		{
+			printf("Erro: escreva uma opcao valida");
+		}
+	
+	}while(resposta!='s' || resposta != 'n');
+	
+	
 		system("cls");
-			
+}
 	}while(op!=5);
 	}
