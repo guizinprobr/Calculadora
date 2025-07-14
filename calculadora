@@ -1,7 +1,8 @@
 //calcucladora
 #include<stdio.h>
 #include<math.h>
-int op,n1,n2, resposta;
+int op,n1,n2;
+char resposta;
 int main(){
 	
 	do{
@@ -19,7 +20,7 @@ int main(){
 				scanf("%i", &n1);
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i",n1+n2);
+				printf("%i + %i = %i",n1,n2,n1+n2);
 				printf("\n");
 				system("pause");
 				
@@ -28,35 +29,37 @@ int main(){
 				scanf("%i", &n1);
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i\n",n1-n2);
+				printf("%i - %i = %i\n",n2,n1,n2-n1);
 				break;
 		case 3: printf("Digite o primeiro numero:  ");
 				scanf("%i", &n1);
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i\n",n1*n2);
+				printf("%i * %i = %i\n",n1,n2,n1*n2);
 				break;
 		case 4: printf("Digite o primeiro numero:  ");
 				scanf("%i", &n1);
+				if(n1==0) printf("Erro: Divisao por zero nao eh permitida "); break;
 				printf("Digite o segundo numero: ");
 				scanf("%i", &n2);
-				printf("%i\n",n1/n2);
+				printf("%i / %i = %i\n",n2,n1,n2/n1);
 				break;
 		case 5: break;
 		default: printf("Escolha uma opcao valida\n ");
+		system("pause");
 				break;
 	
 	}
 		
-		printf("\nDeseja realizar outra operacao? s(qualquer num)/n(1) ");
-		scanf("%i",&resposta);
-		if(resposta==1){
+		printf("\nDeseja realizar outra operacao? s/n ");
+		scanf("%s",&resposta);
+		if(resposta=='n'){
 			system("cls");
 			printf("Obrigado por usar a calculadora\n");
 			system("pause");
 			break;
 		}
-		system("cls");	
+		system("cls");
 			
 	}while(op!=5);
 	}
