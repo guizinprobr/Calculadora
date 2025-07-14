@@ -1,77 +1,76 @@
-//calcucladora
-#include<stdio.h>
-#include<math.h>
-int op,n1,n2;
-char resposta;
-int main(){
-	
-	do{
-		
-		
-	printf("===============================\n");
-	printf("Calculadora Simples\n");
-	printf("===============================\n");
-	printf("Selecione uma opcao apenas numeros: \n");
-	printf("[1] Soma\n[2] Subtracao\n[3] Multiplicacao\n[4] Divisao\n[5] Sair\n");
-	scanf("%i",&op);
-	
-	switch(op){
-		case 1: printf("Digite o primeiro numero: ");
-				scanf("%i", &n1);
-				printf("Digite o segundo numero: ");
-				scanf("%i", &n2);
-				printf("%i + %i = %i",n1,n2,n1+n2);
-				printf("\n");
-				system("pause");
-				
-				break;
-		case 2: printf("Digite o primeiro numero:  ");
-				scanf("%i", &n1);
-				printf("Digite o segundo numero: ");
-				scanf("%i", &n2);
-				printf("%i - %i = %i\n",n1,n2,n1-n2);
-				break;
-		case 3: printf("Digite o primeiro numero:  ");
-				scanf("%i", &n1);
-				printf("Digite o segundo numero: ");
-				scanf("%i", &n2);
-				printf("%i * %i = %i\n",n1,n2,n1*n2);
-				break;
-		case 4: printf("Digite o primeiro numero:  ");
-				scanf("%i", &n1);
-				printf("Digite o segundo numero: ");
-				scanf("%i", &n2);
-				if(n2==0) printf("Erro: Divisao por zero nao eh permitida "); break;
-				printf("%i / %i = %i\n",n1,n2,n1/n2);
-				break;
-		case 5: break;
-		default: printf("Escolha uma opcao valida\n ");
-		system("pause");
-				break;
-	
-	}
-		
-		if(op!=5){
-		
-		do{
-		
-		printf("\nDeseja realizar outra operacao? s/n ");
-		scanf("%s",&resposta);
-		if(resposta=='n'){
-			system("cls");
-			printf("Obrigado por usar a calculadora\n");
-			system("pause");
-			break;
-		}
-		if(resposta!='n' && resposta!='s')
-		{
-			printf("Erro: escreva uma opcao valida");
-		}
-	
-	}while(resposta!='s' || resposta != 'n');
-	
-	
-		system("cls");
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int op, n1, n2;
+    char resposta;
+
+    do {
+        system("cls"); // limpa a tela
+        printf("===============================\n");
+        printf("Calculadora Simples\n");
+        printf("===============================\n");
+        printf("Selecione uma opcao apenas numeros:\n");
+        printf("[1] Soma\n[2] Subtracao\n[3] Multiplicacao\n[4] Divisao\n[5] Sair\n");
+        scanf("%d", &op);
+
+        switch(op) {
+            case 1:
+                printf("Digite o primeiro numero: ");
+                scanf("%d", &n1);
+                printf("Digite o segundo numero: ");
+                scanf("%d", &n2);
+                printf("Resultado: %d + %d = %d\n", n1, n2, n1 + n2);
+                break;
+
+            case 2:
+                printf("Digite o primeiro numero: ");
+                scanf("%d", &n1);
+                printf("Digite o segundo numero: ");
+                scanf("%d", &n2);
+                printf("Resultado: %d - %d = %d\n", n1, n2, n1 - n2);
+                break;
+
+            case 3:
+                printf("Digite o primeiro numero: ");
+                scanf("%d", &n1);
+                printf("Digite o segundo numero: ");
+                scanf("%d", &n2);
+                printf("Resultado: %d * %d = %d\n", n1, n2, n1 * n2);
+                break;
+
+            case 4:
+                printf("Digite o primeiro numero: ");
+                scanf("%d", &n1);
+                printf("Digite o segundo numero: ");
+                scanf("%d", &n2);
+                if (n2 == 0) {
+                    printf("Erro: divisão por zero não permitida.\n");
+                } else {
+                    printf("Resultado: %d / %d = %d\n", n1, n2, n1 / n2);
+                }
+                break;
+
+            case 5:
+                printf("Obrigado por usar a calculadora!\n");
+                return 0;
+
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+                continue; // pula direto pra próxima iteração do loop
+        }
+
+        // Loop de validação da resposta
+        do {
+            printf("\nDeseja fazer outra operacao? (s/n): ");
+            scanf(" %c", &resposta);
+            if (resposta != 's' && resposta != 'S' && resposta != 'n' && resposta != 'N') {
+                printf("Resposta inválida. Digite apenas 's' para sim ou 'n' para não.\n");
+            }
+        } while (resposta != 's' && resposta != 'S' && resposta != 'n' && resposta != 'N');
+
+    } while (resposta == 's' || resposta == 'S');
+
+    printf("Programa encerrado. Ate logo!\n");
+    return 0;
 }
-	}while(op!=5);
-	}
