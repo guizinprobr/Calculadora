@@ -21,7 +21,9 @@ int main() {
                 	scanf("%f", &n1);
                 	printf("Digite o segundo numero: ");
                 	scanf("%f", &n2);
+                	
                 	printf("Resultado: %f + %f = %f\n", n1, n2, n1 + n2);
+                	if(n1 )
                 	printf("Deseja efetuar outra operacao? (s/n) ");
                 	scanf(" %c", &resposta);
                 		
