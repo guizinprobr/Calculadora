@@ -70,13 +70,19 @@ int main() {
 																	                								continue;
        
     }
-    if(resposta!='s'&& resposta !='S'){
-    	break;
-	}
-	else if( resposta != 's' && resposta != 'S' && resposta!='n'&& resposta !='N')
-	{
-		printf("Insira apenas s/n ");
-	}
+    if (resposta == 'n' || resposta == 'N') {
+    break; // encerra o loop principal
+}
+
+while (resposta != 's' && resposta != 'S' && resposta != 'n' && resposta != 'N') {
+    printf(" Entrada invalida! Digite apenas 's' ou 'n': ");
+    scanf(" %c", &resposta);
+    //while (getchar() != '\n'); // limpa o buffer IMPORTANTE!!
+    if (resposta == 'n' || resposta == 'N') {
+        break; // sai do loop principal se a nova resposta for n/N
+    }
+}
+
     
     }while(op!=5);
    		system("cls");
