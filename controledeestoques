@@ -1,0 +1,115 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 1000
+
+int main(){
+	FILE *ponteiro;
+	char s[100];
+	int op,i=0,qtd[MAX],qtdr,qtdp[MAX],encontrado=0;
+	char item[MAX][50], resposta,itemremover[50];
+	ponteiro = fopen("estoque.txt","a"); 
+do{
+	system("cls");
+	printf("=====================\n");
+	printf("CONTROLE DE ESTOQUE\n");
+	printf("=====================\n\n");
+	printf("Selecione uma opcao: \n\n");
+	printf("1. Adcionar item\n\n");
+	printf("2. Remover item\n\n");
+	printf("3. Listar estoque\n\n");
+	printf("4. Sair\n");
+	fflush(stdin);	
+	scanf("%i",&op);
+		switch(op){
+			case 1: printf("Digite o nome do item: ");
+			scanf(" %s",item[i]);
+			printf("Digite a quantidade: ");
+			scanf("%i",&qtd[i]);
+			printf("\nItem adcionado com sucesso!");
+			if( ponteiro == NULL){
+        printf("Erro ao abrir o arquivo\n");
+    }else {
+        printf("Abriu o arquivo\n");
+        fprintf(ponteiro,"%s\n%i\n",item[i],qtd[i]);
+    }
+			
+			printf("\nDeseja realizar outra operacao? ");
+			scanf(" %c",&resposta);		
+			
+			break;
+							case 2: // exlcuir item.
+									
+									printf("Escreva o nome do item a ser removido: ");
+								    scanf(" %s", itemremover);
+								    int j=0;
+								
+								    for ( j = 0; j < i; j++) {
+								        if (strcmp(item[j], itemremover) == 0) {
+								            printf("Digite a quantidade a ser removida: ");
+								            scanf("%d", &qtdr);
+								
+								            if (qtdr > qtd[j]) {
+								                printf("Quantidade maior que o estoque! Quantidade disponivel: %i.\n",qtd[j]);
+								            } else {
+								                qtd[j] -= qtdr;
+								                printf("Item atualizado com sucesso!");
+								            }
+								            encontrado = 1;
+								            if(qtd[j]==0){
+								            	printf("Item removido do estoque!");
+											}
+								            
+								        }
+								        }
+								   
+								
+								    if (!encontrado) {
+								        printf("Item não encontrado no estoque.\n");
+								    }
+								
+								    printf("\nDeseja realizar outra operacao? ");
+								    scanf(" %c", &resposta);
+								    break;
+								
+																	
+																	
+																	
+																break;
+											case 3: //listar estoque
+													while(fgets(s, 100, ponteiro) != NULL)
+													{		
+													printf(" %s",s);	
+													}
+													break;
+																case 4: //sair
+																	break;
+																			default: // caso nenhuma das opcoes
+																				printf("Escreva uma opcao coerente.");
+																				system("pause");
+																				continue;
+			
+		}
+		
+	
+	
+	
+i++;
+if(resposta=='n'|| resposta=='N')
+{
+	break;
+}
+while(resposta != 's' && resposta != 'S' && resposta != 'n' && resposta != 'N'&&op!=4){
+
+printf("\nEscreva s para sim ou n para nao para continuar:");
+scanf(" %c",&resposta);
+}
+while (getchar() != '\n');
+if(resposta == 'n' || resposta == 'N'||op==4){
+
+break;
+}
+fclose(ponteiro);
+}while(resposta!='n' && resposta!='N');
+printf("Obrigado por usar o estoque!");
+return(0);
+}
