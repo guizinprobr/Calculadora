@@ -76,9 +76,16 @@ do{
 																	
 																break;
 											case 3: //listar estoque
-													while(fgets(s, 100, ponteiro) != NULL)
+													printf("===================\n\n");
+													printf("ESTOQUE ATUAL\n\n ");
+													printf("===================\n\n");
+													while(fgets(s, 1000, ponteiro) != NULL)
 													{		
 													printf(" %s",s);	
+													}
+													if(fgets(s,1000,ponteiro)==NULL)
+													{
+														printf("O estoque esta vazio.");
 													}
 													break;
 																case 4: //sair
@@ -110,6 +117,6 @@ break;
 }
 fclose(ponteiro);
 }while(resposta!='n' && resposta!='N');
-printf("Obrigado por usar o estoque!");
+printf("Obrigado por usar o estoque! ATe a proxima!");
 return(0);
 }
